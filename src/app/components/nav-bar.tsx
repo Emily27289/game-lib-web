@@ -15,7 +15,7 @@ export default function NavBar(props: NavBarProps) {
     ]
 
     return (
-        <nav className="flex justify-between items-center p-4 bg-green-900 text-white">
+        <nav className="flex justify-between items-center p-4 bg-emerald-950 text-emerald-100">
       <div className="flex gap-6">
         <a href="/game" className="text-lg font-bold">GAMES</a>
         <a href="/store" className="text-lg font-bold">STORE</a>
