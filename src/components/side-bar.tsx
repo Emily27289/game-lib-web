@@ -1,7 +1,7 @@
 
 export default function Sidebar() {
     return (
-      <aside className="w-60">
+      <aside className="min-w-1/3 bg-emerald-600 p-6">
         <div className="flex justify-begin">
           <h1 className="w-70 h-144 text-2x1 text-center font-bold">
             <div className="mt-4">

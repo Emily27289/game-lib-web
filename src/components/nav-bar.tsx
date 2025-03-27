@@ -9,7 +9,7 @@ export default function NavBar(props: NavBarProps) {
     const actvieClass = "border-b-4 border-pink-600 pb-2"
 
     const links = [
-        { text: "game", href: "/game" },
+        { text: "game", href: "/games" },
         { text: "Store", href: "/Store" },
         { text: "Nickname", href: "/Nickname" },
     ]
@@ -17,7 +17,7 @@ export default function NavBar(props: NavBarProps) {
     return (
         <nav className="flex justify-between items-center p-4 bg-emerald-950 text-emerald-100">
       <div className="flex gap-6">
-        <a href="/game" className="text-lg font-bold">GAMES</a>
+        <a href="/games" className="text-lg font-bold">GAMES</a>
         <a href="/store" className="text-lg font-bold">STORE</a>
       </div>
       <div className="flex items-center gap-2">
