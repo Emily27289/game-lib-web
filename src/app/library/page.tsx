@@ -35,7 +35,7 @@ export default function GamesPage() {
 
   return (
     <div>
-      <NavBar active="Game" />
+      <NavBar active="Library" />
       <div className="flex justify-begin max-w-full">
         <Sidebar games={games} onSelectGame={handleSelectGame} selectedGameId={selectedGame?.id} loading={loading} />
         {selectedGame ? (

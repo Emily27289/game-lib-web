@@ -45,5 +45,5 @@ export async function createGame(initialState: any, form: FormData){
         }
     }
 
-    redirect('/games');
+    redirect('/library');
 }
