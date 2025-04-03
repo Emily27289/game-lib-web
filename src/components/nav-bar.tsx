@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface NavBarProps {
-    active: "Game" | "Store" | "Nickname"
+    active: "Game" | "PublishGame" | "Nickname"
 }
 
 export default function NavBar(props: NavBarProps) {
@@ -10,15 +10,15 @@ export default function NavBar(props: NavBarProps) {
 
     const links = [
         { text: "game", href: "/games" },
-        { text: "Store", href: "/Store" },
+        { text: "PublishGame", href: "/publish/game" },
         { text: "Nickname", href: "/Nickname" },
     ]
 
     return (
         <nav className="flex justify-between items-center p-4 bg-emerald-950 text-emerald-100">
       <div className="flex gap-6">
-        <a href="/games" className="text-lg font-bold">GAMES</a>
-        <a href="/store" className="text-lg font-bold">STORE</a>
+        <a href="/games" className="text-lg font-bold">LIBRARY</a>
+        <a href="/publish/game" className="text-lg font-bold">PUBLISH GAME</a>
       </div>
       <div className="flex items-center gap-2">
         <span>NICKNAME</span>

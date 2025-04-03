@@ -1,6 +1,6 @@
 "use client";
 
-import { createGame } from "../actions/game-actions";
+import { createGame } from "../../actions/game-actions";
 import NavBar from "@/components/nav-bar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,7 +45,7 @@ export default function StorePage() {
 
     return (
         <>
-            <NavBar active="Store" />
+            <NavBar active="PublishGame" />
 
             <main className="flex justify-center bg-emerald-600 min-h-screen">
                 <div className="bg-emerald-900 min-w-2/3 m-6 p-6 rounded min-h-1/4">
