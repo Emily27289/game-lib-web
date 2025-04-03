@@ -1,26 +1,50 @@
+"use client";
 
-export default function Sidebar() {
-    return (
-      <aside className="min-w-1/3 bg-emerald-600 p-6">
-        <div className="flex justify-begin">
-          <h1 className="w-70 h-144 text-2x1 text-center font-bold">
-            <div className="mt-4">
-              <input
-                type="text"
-                placeholder="Pesquisar..."
-                className="rounded-lg p-1 w-50  bg-emerald-400 text-emerald-950" 
-              />
+import { useState } from "react";
 
-            <ul className="mt-5 text-left">
-              {Array(10).fill("Jogo X").map((jogo, index) => (
-                <li key={index} className="text-emerald-950 mt-1">{jogo}</li>
+export default function Sidebar({ games, onSelectGame, selectedGameId, loading }) {
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredGames = games?.filter(game => 
+    game.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
+
+  return (
+    <aside className="min-w-1/3 bg-emerald-600 p-6">
+      <div className="flex flex-col">
+        <input
+          type="text"
+          placeholder="Pesquisar..."
+          className="rounded-lg p-2 w-full bg-emerald-400 text-emerald-950 mb-4"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+
+        <div className="overflow-y-auto max-h-screen">
+          {loading ? (
+            <p className="text-white">Carregando jogos...</p>
+          ) : filteredGames.length > 0 ? (
+            <ul className="mt-2 text-left">
+              {filteredGames.map((game) => (
+                <li 
+                  key={game.id} 
+                  className={`p-2 rounded-md cursor-pointer transition-colors duration-200 mb-1 ${
+                    selectedGameId === game.id 
+                      ? "bg-emerald-800 text-white font-bold" 
+                      : "text-emerald-950 hover:bg-emerald-500"
+                  }`}
+                  onClick={() => onSelectGame(game)}
+                >
+                  {game.name}
+                </li>
               ))}
             </ul>
-              </div>
-          </h1>
-            
+          ) : (
+            <p className="text-emerald-950">Nenhum jogo encontrado</p>
+          )}
         </div>
-      </aside>
-    );
-  }
-  
+      </div>
+    </aside>
+  );
+}
