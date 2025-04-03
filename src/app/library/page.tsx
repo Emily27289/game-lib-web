@@ -6,7 +6,7 @@ import NavBar from "@/components/nav-bar";
 import Sidebar from "@/components/side-bar";
 import { getGames } from "../actions/game-actions";
 
-export default function GamesPage() {
+export default function LibraryPage() {
   const [games, setGames] = useState([]);
   const [selectedGame, setSelectedGame] = useState(null);
   const [loading, setLoading] = useState(true);
