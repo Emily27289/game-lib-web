@@ -40,7 +40,7 @@ export default function GameCard({ game }: any) {
           <div className="bg-emerald-700 p-4 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Detalhes</h3>
             <ul className="space-y-2">
-              <li><span className="font-semibold">Publicadora:</span> {game.publisher}</li>
+              <li><span className="font-semibold">Desenvolvedora:</span> {game.publisher}</li>
               <li><span className="font-semibold">Categoria:</span> {categoryDisplayName}</li>
               <li><span className="font-semibold">Tamanho:</span> {game.size} GB</li>
               <li><span className="font-semibold">Lançamento:</span> {formatDate(game.releaseDate)}</li>
