@@ -35,7 +35,7 @@ const initialState = {
     }
 };
 
-export default function StorePage() {
+export default function PublishGamePage() {
     const [state, formAction, pending] = useActionState(
         async (prevState: typeof initialState, formData: FormData) => {
             return await createGame(prevState, formData);
@@ -49,7 +49,7 @@ export default function StorePage() {
 
             <main className="flex justify-center bg-emerald-600 min-h-screen">
                 <div className="bg-emerald-900 min-w-2/3 m-6 p-6 rounded min-h-1/4">
-                    <h2 className="text-lg font-bold">Store</h2>
+                    <h2 className="text-lg font-bold text-white">Publicar Jogo</h2>
                     <div>
                         <form action={formAction}>
                             <div className="mb-4 mt-4">
@@ -58,7 +58,7 @@ export default function StorePage() {
                                     name="name" 
                                     aria-invalid={!!state?.errors.name}
                                     defaultValue={state?.values.name} 
-                                    className="mb-1"
+                                    className="mb-1 text-white"
                                 />
                                 <span className="text-sm text-destructive">
                                     {state?.errors.name}
@@ -70,7 +70,7 @@ export default function StorePage() {
                                     name="category" 
                                     defaultValue={state?.values.category}
                                 >
-                                    <SelectTrigger className="w-full mb-1">
+                                    <SelectTrigger className="w-full mb-1 text-white">
                                         <SelectValue placeholder="Selecione a categoria" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -82,7 +82,7 @@ export default function StorePage() {
                                         <SelectItem value="5">Corrida</SelectItem>
                                     </SelectContent>
                                 </Select>
-                                <span className="text-sm text-destructive">
+                                <span className="text-sm text-destructive ">
                                     {state?.errors.category}
                                 </span>
                             </div>
@@ -93,7 +93,7 @@ export default function StorePage() {
                                     name="publisher" 
                                     aria-invalid={!!state?.errors.publisher}
                                     defaultValue={state?.values.publisher}
-                                    className="mb-1"
+                                    className="mb-1 text-white"
                                 />
                                 <span className="text-sm text-destructive">
                                     {state?.errors.publisher}
@@ -107,7 +107,7 @@ export default function StorePage() {
                                     type="number"
                                     aria-invalid={!!state?.errors.size}
                                     defaultValue={state?.values.size}
-                                    className="mb-1"
+                                    className="mb-1 text-white"
                                 />
                                 <span className="text-sm text-destructive">
                                     {state?.errors.size}
@@ -121,7 +121,7 @@ export default function StorePage() {
                                     type="date"
                                     aria-invalid={!!state?.errors.releaseDate}
                                     defaultValue={state?.values.releaseDate}
-                                    className="mb-1"
+                                    className="mb-1 text-white"
                                 />
                                 <span className="text-sm text-destructive">
                                     {state?.errors.releaseDate}
